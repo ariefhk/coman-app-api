@@ -4,6 +4,7 @@ import { errorMiddleware } from "../middleware/error-middleware";
 import { privateRouter } from "../route/private-api";
 
 export const web = express();
+web.use(express.urlencoded({ extended: true }));
 web.use(express.json());
 web.use(publicRouter);
 web.use(privateRouter);
